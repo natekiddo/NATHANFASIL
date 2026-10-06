@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nathan Fasil | Software Engineer</title>
+<meta name="description" content="Nathan Fasil: Computer Science student and intern at Tsehay Bank and Atlas Computer Technology. Spring Boot, React, Linux, CI/CD, Docker and Kubernetes.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--bg2:#f7f8f9;--card:#fff;--ink:#292a2e;--sub:#505258;--line:#dcdfe4;--blue:#1868db;--blue2:#357de8;--tint:#e9f2ff;--navy:#1c2b41;--ok:#1f845a;--warn:#e56910;--sh:0 12px 32px rgba(9,30,66,.14)}
+:root[data-theme=dark]{--bg:#101214;--bg2:#161a1d;--card:#1d2125;--ink:#e6e9ef;--sub:#9fa6b2;--line:#2b3138;--blue:#669df1;--blue2:#8fb8f6;--tint:#16263f;--navy:#0b1220;--sh:0 12px 32px rgba(0,0,0,.55)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#101214;--bg2:#161a1d;--card:#1d2125;--ink:#e6e9ef;--sub:#9fa6b2;--line:#2b3138;--blue:#669df1;--blue2:#8fb8f6;--tint:#16263f;--navy:#0b1220;--sh:0 12px 32px rgba(0,0,0,.55)}}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block;object-fit:cover;object-position:center center}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+section{padding:80px 0;position:relative}
+h1,h2,h3{line-height:1.08;letter-spacing:-.03em}
+h2{font-size:clamp(30px,4vw,50px);font-weight:800;margin-bottom:12px}
+.lead{color:var(--sub);font-size:18px;max-width:620px;margin-top:14px}
+.alt{background:var(--bg2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:10px;font:600 15px Inter,sans-serif;border:1px solid transparent;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s}
+.btn-p{background:var(--blue);color:#fff;box-shadow:0 10px 22px rgba(24,104,219,.18)}.btn-p:hover{background:var(--blue2);transform:translateY(-1px)}
+:root[data-theme=dark] .btn-p{color:#101214}
+.btn-o{border-color:var(--line);color:var(--ink);background:transparent}.btn-o:hover{background:var(--bg2)}
+#pg{position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,var(--blue),#8270db,#e56910);transform-origin:0 50%;transform:scaleX(0);z-index:99}
+/* nav */
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:24px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:-.02em}
+.mark{width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:800;box-shadow:0 10px 18px rgba(24,104,219,.22)}
+.links{display:flex;gap:2px;flex:1;justify-content:flex-start}
+.links a{padding:8px 12px;border-radius:8px;font-weight:600;color:var(--sub);position:relative;letter-spacing:-.01em}
+.links a:hover,.links a.on{color:var(--ink);background:var(--bg2)}
+.nr{display:flex;gap:10px;align-items:center}
+#mode{width:38px;height:38px;border-radius:8px;border:1px solid var(--line);background:none;cursor:pointer;font-size:16px;transition:background .2s,transform .2s}
+#mode:hover{background:var(--bg2);transform:translateY(-1px)}
+/* hero */
+.hero{padding:80px 0 90px;overflow:hidden}
+.mesh{position:absolute;inset:0;z-index:-1;filter:blur(70px);opacity:.55}
+.mesh i{position:absolute;border-radius:50%;animation:fl 14s ease-in-out infinite alternate}
+.mesh i:nth-child(1){width:520px;height:520px;background:#357de8;left:-8%;top:-20%}
+.mesh i:nth-child(2){width:420px;height:420px;background:#8270db;right:5%;top:10%;animation-delay:-5s}
+.mesh i:nth-child(3){width:360px;height:360px;background:#2abb7f;left:40%;bottom:-25%;animation-delay:-9s}
+@keyframes fl{to{transform:translate(80px,50px) scale(1.15)}}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+h1{font-size:clamp(44px,6.4vw,76px);font-weight:800}
+h1 .w{display:inline-block;opacity:0;transform:translateY(40px) rotate(3deg);animation:up .8s cubic-bezier(.16,1,.3,1) forwards;animation-delay:calc(var(--i)*.09s + .1s)}
+h1 .g{background:linear-gradient(90deg,var(--blue),#8270db);-webkit-background-clip:text;background-clip:text;color:transparent}
+@keyframes up{to{opacity:1;transform:none}}
+.type{margin-top:20px;font-size:20px;font-weight:600;min-height:32px}
+.type b{color:var(--blue)}.type u{display:inline-block;width:2px;height:22px;background:var(--blue);vertical-align:-4px;margin-left:2px;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.signup{margin-top:24px;max-width:480px}
+.signup label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
+.row{display:flex;gap:8px}
+.row input{flex:1;min-width:0;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:inherit}
+.hint{font-size:13px;color:var(--sub);margin-top:8px}.hint a{color:var(--blue);text-decoration:underline}
+/* live board */
+.bw{perspective:1200px}
+.board{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--sh);overflow:hidden;transition:transform .15s}
+.bar{display:flex;gap:8px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line);font-size:13px;font-weight:600;color:var(--sub)}
+.bar i{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.bar span{margin-left:8px}.bar em{margin-left:auto;font-style:normal;color:var(--ok);display:flex;gap:6px;align-items:center}
+.bar em:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok);animation:pu 1.4s infinite}
+@keyframes pu{50%{box-shadow:0 0 0 6px transparent;box-shadow:0 0 0 6px rgba(31,132,90,.25)}}
+.stage{position:relative;height:372px;background:var(--bg2)}
+.ch{position:absolute;top:0;width:33.333%;padding:14px 16px;font-size:12px;font-weight:700;color:var(--sub)}
+.tk{position:absolute;width:calc(33.333% - 16px);left:calc(var(--c)*33.333% + 8px);top:calc(var(--r)*80px + 42px);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px;font-size:12px;box-shadow:0 1px 2px rgba(9,30,66,.12);transition:left .8s cubic-bezier(.2,.9,.2,1),top .8s cubic-bezier(.2,.9,.2,1),box-shadow .3s}
+.tk.mv{box-shadow:0 10px 24px rgba(24,104,219,.35);border-color:var(--blue);z-index:3}
+.tk strong{display:block;font-weight:600;line-height:1.3;margin-bottom:8px}
+.tk div{display:flex;justify-content:space-between;align-items:center;font-weight:600;color:var(--sub);font-size:11px}
+.tk img{width:20px;height:20px;border-radius:50%}
+/* marquee */
+.strip{border-block:1px solid var(--line);padding:26px 0;overflow:hidden;background:var(--bg)}
+.mq{display:flex;gap:56px;width:max-content;animation:mq 28s linear infinite}
+.strip:hover .mq{animation-play-state:paused}
+.mq span{font-size:22px;font-weight:700;color:var(--sub)}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* tabs */
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
+.tabs button{background:none;border:0;border-top:3px solid var(--line);padding:16px 4px 0;font:inherit;text-align:left;color:var(--sub);cursor:pointer;position:relative}
+.tabs button b{display:block;font-size:20px;color:var(--ink)}
+.tabs button span{font-size:14px}
+.tabs button:after{content:"";position:absolute;left:0;right:0;top:-3px;height:3px;background:var(--blue);transform:scaleX(0);transform-origin:0 50%}
+.tabs button[aria-selected=true]:after{animation:fillbar 6s linear forwards}
+.paused .tabs button[aria-selected=true]:after{animation:none;transform:scaleX(1)}
+@keyframes fillbar{to{transform:scaleX(1)}}
+.panel{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding-top:44px;animation:fi .5s both}
+@keyframes fi{from{opacity:0;transform:translateX(24px)}}
+.panel h3{font-size:30px;font-weight:700}.panel p{color:var(--sub);font-size:18px;margin-top:12px}
+.panel ul{padding:0;margin-top:16px;list-style:none;display:grid;gap:8px;font-weight:500}
+.panel li:before{content:"✓";color:var(--ok);font-weight:800;margin-right:10px}
+.vis{background:linear-gradient(135deg,var(--tint),var(--bg2));border:1px solid var(--line);border-radius:16px;min-height:250px;display:grid;place-items:center;font-size:clamp(44px,7vw,84px);font-weight:800;color:var(--blue);letter-spacing:-.05em}
+/* more than */
+.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.sp{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s}
+.sp:before{content:"";position:absolute;inset:0;background:radial-gradient(320px circle at var(--mx,50%) var(--my,0),rgba(24,104,219,.16),transparent 60%);opacity:0;transition:opacity .3s}
+.sp:hover:before{opacity:1}.sp:hover{transform:translateY(-6px);box-shadow:0 18px 28px rgba(9,30,66,.08);border-color:rgba(24,104,219,.28)}
+.sp>*{position:relative}
+.ic{width:44px;height:44px;border-radius:12px;background:var(--tint);display:grid;place-items:center;font-size:22px;margin-bottom:18px;border:1px solid rgba(24,104,219,.08)}
+.sp h3{font-size:22px;font-weight:700;margin-bottom:4px}.sp p{color:var(--sub);margin-top:8px}
+/* perf */
+.perf{background:var(--navy);color:#fff}
+.perf .lead{color:#b6c2cf}
+.pm{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.m{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:22px}
+.m small{color:#b6c2cf;font-weight:600}
+.m b{display:block;font-size:38px;font-weight:800;letter-spacing:-.03em;margin:6px 0 12px}
+.bd{height:6px;border-radius:3px;background:rgba(255,255,255,.14);overflow:hidden}
+.bd i{display:block;height:100%;width:0;background:var(--ok);border-radius:3px;transition:width 1.4s cubic-bezier(.16,1,.3,1),background .3s}
+.m em{display:block;font-style:normal;font-size:12px;font-weight:700;margin-top:10px;color:#7ee2b8}
+.m.bad em{color:#ffb27a}.m.bad .bd i{background:var(--warn)}
+.pf{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:28px;color:#b6c2cf;font-size:14px;align-items:center}
+.pf b{color:#fff}
+.perf .btn-o{color:#fff;border-color:rgba(255,255,255,.3)}
+/* slider */
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+.ar{display:flex;gap:8px;align-items:center;font-weight:600;color:var(--sub)}
+.ar button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;font-size:18px}
+.ar button:hover{background:var(--blue);color:#fff}
+.sl{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-top:40px;padding-bottom:6px}
+.sl::-webkit-scrollbar{display:none}
+.sl article{flex:0 0 min(1120px,92%);scroll-snap-align:start;display:grid;grid-template-columns:1.15fr 1fr;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.sl .im{overflow:hidden;background:var(--tint);min-height:300px}
+.sl img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.sl article:hover img{transform:scale(1.07)}
+.sl .b{padding:36px;display:flex;flex-direction:column;gap:12px;justify-content:center}
+.key{font-size:13px;font-weight:700;color:var(--blue)}
+.sl h3{font-size:30px;font-weight:800}.sl p{color:var(--sub)}
+.res{font-weight:600;font-size:14px;color:var(--ink);border-left:3px solid var(--blue);padding-left:12px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{font-size:12px;font-weight:600;padding:3px 10px;border-radius:4px;background:var(--bg2);border:1px solid var(--line);color:var(--sub)}
+.sl .im{display:grid;place-items:center;padding:24px}.fl{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center}.fl span{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:13px;font-weight:600;box-shadow:0 1px 2px rgba(9,30,66,.12)}.fl i{font-style:normal;color:var(--blue);font-weight:800}.fl .bl{border-color:#357de8;color:#357de8}.fl .gr{border-color:var(--ok);color:var(--ok)}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:44px}
+.stats b{display:block;font-size:clamp(56px,9vw,112px);font-weight:800;letter-spacing:-.05em;line-height:1;background:linear-gradient(135deg,var(--blue),#8270db);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stats span{color:var(--sub);font-size:17px}
+/* timeline */
+.tl{position:relative;margin-top:48px;padding-left:36px}
+.tl:before,.tl i{content:"";position:absolute;left:7px;top:0;width:2px;background:var(--line);height:100%}
+.tl i{background:linear-gradient(var(--blue),#8270db);height:0}
+.job{position:relative;padding:0 0 44px}
+.job:before{content:"";position:absolute;left:-36px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--line);transition:.4s}
+.job.in:before{border-color:var(--blue);background:var(--blue)}
+.job time{font-weight:600;color:var(--blue);font-size:14px}
+.job h3{font-size:24px;font-weight:700;margin:2px 0}
+.job p{color:var(--sub);margin:6px 0 12px;max-width:620px}
+/* cta */
+.cta{background:linear-gradient(120deg,#0c3b8a,#1868db,#6a4fd1,#0c3b8a);background-size:300% 100%;animation:gs 14s ease infinite;color:#fff}
+@keyframes gs{50%{background-position:100% 0}}
+.cta h2{max-width:640px}.cta .lead{margin:14px 0 0;color:#dbe7ff}
+.mail{display:flex;gap:8px;margin:30px 0 0;max-width:520px;align-items:stretch}
+.mail code{flex:1;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:10px;padding:12px 14px;font:600 15px Inter;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center}
+.cta .btn-p{background:#fff;color:#0c3b8a}
+.soc{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.soc a{padding:10px 16px;border:1px solid rgba(255,255,255,.35);border-radius:8px;font-weight:600;font-size:14px}.soc a:hover{background:rgba(255,255,255,.15)}
+footer{padding:40px 0;color:var(--sub);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
+footer a:hover{color:var(--blue)}
+.rv{opacity:0;transform:translateY(36px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--d,0)*.1s)}
+.rv.in{opacity:1;transform:none}
+@media(max-width:900px){
+.links,.nr .t{display:none}.nav{justify-content:space-between}
+.hero .wrap,.panel,.sl article{grid-template-columns:1fr}
+.tri,.stats{grid-template-columns:1fr}.pm{grid-template-columns:1fr 1fr}.tabs{grid-template-columns:1fr 1fr}
+section{padding:64px 0}}
+@media(max-width:520px){.row,.mail{flex-direction:column}.pm{grid-template-columns:1fr}.tk{font-size:11px;padding:8px}.sl .b{padding:24px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}h1 .w,.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+.split{display:grid;grid-template-columns:minmax(300px,.42fr) 1fr;gap:72px;align-items:start}.hd{position:sticky;top:110px}
+.me{width:220px;height:220px;border-radius:28px;object-fit:cover;margin-top:28px;box-shadow:var(--sh)}
+.sk{display:grid;grid-template-columns:1fr 1fr;gap:36px 48px}.sg h3{font-size:16px;margin-bottom:12px;color:var(--sub)}
+.sk .tags span{font-size:14px;padding:6px 14px;transition:.2s}.sk .tags span:hover{background:var(--blue);color:#fff;border-color:var(--blue);transform:translateY(-3px)}
+.sl .im.ph{padding:0;display:block}
+.cg{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:center}.cc{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ct{display:block;padding:22px;border:1px solid rgba(255,255,255,.3);border-radius:14px;background:rgba(255,255,255,.08);transition:.25s,transform .25s;box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}.ct:hover{background:rgba(255,255,255,.15);transform:translateY(-4px)}
+.ct small{opacity:.85;font-weight:600}.ct b{display:block;font-size:18px;margin-top:4px;overflow-wrap:anywhere}
+
+@media(max-width:900px){.split,.cg{grid-template-columns:1fr;gap:32px}.hd{position:static}.sk{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.wrap{padding:0 20px}.cc{grid-template-columns:1fr}}
+[hidden]{display:none!important}
+.about-showcase{background:transparent;border:none;border-radius:0;overflow:hidden;position:relative;box-shadow:none;padding:0}
+.about-showcase::before{display:none}
+.about-shell{max-width:none;margin:0;padding:0;position:relative;z-index:1;line-height:0}
+.about-image{display:block;width:100%;height:775px;border-radius:0;box-shadow:none;object-fit:cover}
+@media (max-width: 980px){.about-shell{padding:0}.about-image{height:515px}}
+.big{margin-top:28px}.big b{display:block;font-size:clamp(64px,8vw,104px);font-weight:800;letter-spacing:-.05em;line-height:1;background:linear-gradient(135deg,var(--blue),#8270db);-webkit-background-clip:text;background-clip:text;color:transparent}.big span{color:var(--sub)}
+.feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:24px}
+.feature-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 12px 22px rgba(9,30,66,.04);transition:transform .25s,border-color .25s,box-shadow .25s}
+.feature-card:hover{transform:translateY(-4px);border-color:rgba(24,104,219,.35);box-shadow:0 18px 30px rgba(9,30,66,.08)}
+.feature-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--tint);padding:7px 10px;border-radius:999px;border:1px solid rgba(24,104,219,.10)}
+.feature-card h3{font-size:24px;font-weight:800;margin:16px 0 10px;letter-spacing:-.03em}
+.feature-card p{color:var(--sub);font-size:15px;line-height:1.7}
+.feature-card ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding:0}
+.feature-card li{display:inline-flex;align-items:center;padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:var(--bg2);font-size:11px;font-weight:700;color:var(--ink)}
+.feature-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.feature-meta span{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;background:var(--bg2);border:1px solid var(--line);font-size:12px;font-weight:700;color:var(--sub)}
+.rt{position:relative;margin-top:48px}
+.rl{position:absolute;left:12.5%;right:12.5%;top:21px;height:4px;background:var(--line);border-radius:2px}
+.rl i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),#8270db);border-radius:2px;transition:width .9s cubic-bezier(.16,1,.3,1)}
+.rn{display:grid;grid-template-columns:repeat(4,1fr);position:relative}
+.rn button{background:none;border:0;cursor:pointer;color:var(--sub);font:inherit;text-align:center}
+.rn .dt{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;margin:0 auto 12px;background:var(--card);border:3px solid var(--line);font-weight:800;transition:.4s}
+.rn button.dn .dt{border-color:var(--blue);color:var(--blue)}
+.rn button[aria-selected=true] .dt{background:var(--blue);border-color:var(--blue);color:#fff;transform:scale(1.18);box-shadow:0 0 0 8px rgba(24,104,219,.18)}
+.rn b{display:block;color:var(--ink);font-size:17px}.rn small{font-size:13px}
+.rp{margin-top:36px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:40px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:36px;animation:fi .5s both}
+.ph1{grid-column:1/-1}.ph1 h3{font-size:clamp(26px,3vw,38px);font-weight:800;margin:6px 0}.ph1 p{color:var(--sub);font-size:18px;max-width:760px}
+.rp h4{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--sub);margin-bottom:12px}
+.rp ul{padding:0;list-style:none;display:grid;gap:10px}.rp li{padding-left:22px;position:relative;font-weight:500}
+.rp li:before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:var(--blue)}
+.rp .btn{margin-top:22px}
+@media(max-width:900px){.ab{grid-template-columns:1fr;gap:32px}.pic{max-width:360px}.rp{grid-template-columns:1fr;padding:24px}}
+@media(max-width:700px){.rn small{display:none}.rn b{font-size:13px}.facts{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="pg"></div>
+<header><div class="wrap nav">
+<a class="logo" href="#top"><span class="mark">NF</span>Nathan Fasil</a>
+<nav class="links" aria-label="Main"><a href="#process">Process</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#perf">Performance</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
+<div class="nr"><a class="t btn btn-o" href="https://github.com/natekiddo" target="_blank" rel="noopener">GitHub</a><button id="mode" aria-label="Toggle dark mode">🌙</button><a class="btn btn-p mag" href="#contact">Hire me</a></div>
+</div></header>
+<main id="top">
+
+<section class="hero"><div class="mesh" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="wrap">
+<div>
+<h1><span class="w" style="--i:0">Ideas</span> <span class="w" style="--i:1">in.</span><br><span class="w g" style="--i:3">Shipped</span> <span class="w g" style="--i:4">software</span> <span class="w" style="--i:5">out.</span></h1>
+<p class="type" aria-live="off">I build <b id="tp"></b><u></u></p>
+<p class="lead rv in" style="margin-top:18px">Computer Science student at Hope University College, heading into 4th year. Software at Tsehay Bank. System engineering and DevOps at Atlas Computer Technology.</p>
+<form class="signup" id="mf"><label for="em">Your work email</label>
+<div class="row"><input id="em" type="email" placeholder="you@company.com" required><button class="btn btn-p mag" type="submit">Start a conversation</button></div>
+<p class="hint">Opens your email app with a message to me, or message me on <a href="https://wa.me/251975730037" target="_blank" rel="noopener">WhatsApp</a> or <a href="https://t.me/natekiddo" target="_blank" rel="noopener">Telegram</a>.</p></form>
+</div>
+<div class="bw"><div class="board" id="bd">
+<div class="bar"><i></i><i></i><i></i><span>Delivery board · NF</span><em>Live</em></div>
+<div class="stage" id="st"><div class="ch" style="left:0">Intake</div><div class="ch" style="left:33.333%">In progress</div><div class="ch" style="left:66.666%">Shipped</div></div>
+</div></div>
+</div></section>
+
+<div class="strip" aria-label="Tools"><div class="mq" id="mq"></div></div>
+
+<section id="process"><div class="wrap split"><div class="hd"><h2 class="rv">Code. Ship. Run. Observe.</h2><p class="lead rv" style="--d:1">From the application to the server it runs on. This is the full path I have worked through.</p></div><div><div class="tabs" id="tabs" role="tablist"></div>
+<div class="panel" id="panel"></div></div></div></section>
+
+<section id="about" class="about-showcase">
+  <div class="about-shell">
+    <img class="about-image" src="N8@te (1).png" alt="Nathan Fasil portfolio cover image" />
+  </div>
+</section>
+
+<section class="alt"><div class="wrap">
+<h2 class="rv">Both sides of the stack</h2>
+<p class="lead rv" style="--d:1">Most developers stop at the API. I also know where it runs.</p>
+<div class="tri">
+<div class="sp rv" style="--d:1"><div class="ic">💻</div><h3>Software side</h3><p>Spring Boot, REST, JWT and PostgreSQL on the back end. React, TypeScript and Tailwind on the front end.</p></div>
+<div class="sp rv" style="--d:2"><div class="ic">🛠️</div><h3>Systems side</h3><p>Linux administration, networking, web servers, CI/CD, Docker, Kubernetes and monitoring.</p></div>
+<div class="sp rv" style="--d:3"><div class="ic">☁️</div><h3>Both, together</h3><p>My senior project joins the two: a private cloud platform for a university, built only with free and open-source tools.</p></div>
+</div></div></section>
+
+<section id="skills"><div class="wrap split">
+<div class="hd"><h2 class="rv">Build what matters</h2>
+<p class="lead rv" style="--d:1">I turn ideas into working products by combining product thinking, software delivery, and systems reliability.</p>
+<div class="big rv" style="--d:2"><b>4</b><span>core delivery layers</span></div></div>
+<div class="feature-grid" id="feature-grid" aria-label="Core capabilities"></div>
+</div></section>
+
+<section id="perf" class="perf"><div class="wrap">
+<h2 class="rv">Don't take my word. Measure it.</h2>
+<p class="lead rv" style="--d:1">These numbers are measured in your browser, on this page, right now. No screenshots, no claims.</p>
+<div class="pm" id="pm"></div>
+<div class="pf"><span>Requests: <b id="rq">–</b></span><span>JS libraries shipped: <b>0</b></span><span>Frameworks: <b>none</b></span><button class="btn btn-o" id="rm" type="button">Measure again</button></div>
+</div></section>
+
+<section id="work"><div class="wrap">
+<div class="sh"><div><h2 class="rv">Project stories</h2><p class="lead rv" style="--d:1">Internship work, my senior project and earlier builds.</p></div>
+<div class="ar"><span id="ct">1 / 7</span><button id="pv" aria-label="Previous project">←</button><button id="nx" aria-label="Next project">→</button></div></div>
+<div class="sl" id="sl">
+<article><div class="im"><div class="fl"><span class="">Draft</span><i>→</i><span class="">Submitted</span><i>→</i><span class="bl">Application Review</span><i>→</i><span class="bl">Infrastructure Review</span><i>→</i><span class="gr">Approved</span><i>→</i><span class="gr">Deployment Completed</span><i>→</i><span class="">Closed</span></div></div><div class="b"><span class="key">TSEHAY BANK · Software internship</span><h3>Digital Banking Deployment Request and Approval System</h3><p>An enterprise workflow that moves deployment requests from draft to closed through application, infrastructure and security review. Rejected requests return for correction.</p><p class="res">Java, Spring Boot, Spring Security and JWT with PostgreSQL, behind a React and TypeScript front end. Exposure to WSO2 API Manager and API gateway concepts.</p><div class="tags"><span>Java</span><span>Spring Boot</span><span>JWT</span><span>PostgreSQL</span><span>React</span><span>TypeScript</span><span>Swagger</span></div></div></article>
+<article><div class="im"><div class="fl"><span class="">GitHub</span><i>→</i><span class="bl">GitHub Actions</span><i>→</i><span class="bl">Self-hosted runner</span><i>→</i><span class="gr">Linux server</span><i>→</i><span class="gr">Website</span></div></div><div class="b"><span class="key">ATLAS · System engineering internship</span><h3>Push to deploy: automated CI/CD</h3><p>A GitHub push triggers a self-hosted runner that deploys to a production environment on a Linux server. I rebuilt the same flow in GitLab CE and Jenkins.</p><p class="res">Fixed real runner, SSH, rsync and host-key problems across a Tailscale network.</p><div class="tags"><span>GitHub Actions</span><span>GitLab</span><span>Jenkins</span><span>SSH</span><span>rsync</span></div></div></article>
+<article><div class="im"><div class="fl"><span class="">Docker image</span><i>→</i><span class="bl">Deployment v1.0</span><i>→</i><span class="gr">Deployment v2.0</span><i>→</i><span class="">Service switch</span></div></div><div class="b"><span class="key">ATLAS · System engineering internship</span><h3>Blue-green releases on Kubernetes</h3><p>Built and pushed a Docker image, ran it with Compose, then deployed to Minikube with Services, NodePort and Ingress. Scaled replicas up and down.</p><p class="res">Switched traffic from version 1.0 to 2.0 with a Service selector.</p><div class="tags"><span>Docker</span><span>Compose</span><span>Kubernetes</span><span>Minikube</span><span>Ingress</span></div></div></article>
+<article><div class="im"><div class="fl"><span class="">Web portal</span><i>→</i><span class="">Backend</span><i>→</i><span class="bl">Linux</span><i>→</i><span class="bl">Virtualization</span><i>→</i><span class="gr">Docker</span><i>→</i><span class="gr">Kubernetes</span><i>→</i><span class="">Monitoring</span></div></div><div class="b"><span class="key">SENIOR PROJECT · Planned</span><h3>University Private Cloud Platform</h3><p>A portal where students, teachers and departments request CPU, RAM, storage, operating systems and containers, and administrators approve them.</p><p class="res">Senior Project I covers research, requirements and design. Senior Project II is the build. Free and open-source tools only.</p><div class="tags"><span>Planned</span><span>Open source</span><span>Linux</span><span>Kubernetes</span></div></div></article>
+<article><div class="im ph"><img src="images/evaluation.webp" alt="Student Evaluation System" loading="lazy"></div><div class="b"><span class="key">EARLIER PROJECT · Education platform</span><h3>Student Evaluation System</h3><p>Manages student records, course grading, instructor feedback and performance analytics.</p><p class="res">Secure role-based system for every user type.</p><div class="tags"><span>PHP</span><span>MySQL</span><span>XAMPP</span></div></div></article>
+<article><div class="im ph"><img src="images/bus.webp" alt="MoveEt transport platform" loading="lazy"></div><div class="b"><span class="key">EARLIER PROJECT · Transport platform</span><h3>MoveEt</h3><p>A transportation and route management platform with real-time navigation workflows and interactive UI systems.</p><p class="res">Scalable front-end architecture.</p><div class="tags"><span>Next.js</span><span>Supabase</span><span>TypeScript</span></div></div></article>
+<article><div class="im ph"><img src="images/micro.webp" alt="Micro Finance System" loading="lazy"></div><div class="b"><span class="key">EARLIER PROJECT · Financial system</span><h3>Micro Finance System</h3><p>Handles client accounts, loan tracking, payment processing and transaction reporting.</p><p class="res">Scalable database architecture.</p><div class="tags"><span>Java</span><span>SQL</span><span>Finance</span></div></div></article>
+</div></div></section>
+
+<section class="alt"><div class="wrap">
+<h2 class="rv">By the numbers</h2>
+<div class="stats">
+<div class="rv"><b data-n="2" data-s="">0</b><span>internships: software and system engineering</span></div>
+<div class="rv" style="--d:1"><b data-n="6" data-s="">0</b><span>Linux distributions worked with</span></div>
+<div class="rv" style="--d:2"><b data-n="3" data-s="">0</b><span>CI/CD platforms: Actions, GitLab, Jenkins</span></div>
+<div class="rv" style="--d:3"><b data-n="7" data-s="">0</b><span>projects shown on this page</span></div>
+</div></div></section>
+
+<section id="experience"><div class="wrap">
+<h2 class="rv">My path</h2>
+<p class="lead rv" style="--d:1">From software to infrastructure, one layer at a time. Click a stop to see what I built and learned there.</p>
+<div class="rt"><div class="rl"><i id="rf"></i></div><div class="rn" id="rn"></div></div>
+<div class="rp" id="rp"></div>
+</div></section>
+
+<section class="cta" id="contact"><div class="wrap cg">
+<div><h2 class="rv">The fastest way to ship is to start</h2>
+<p class="lead rv" style="--d:1">Open to internships and junior software or DevOps roles. Tell me what you're building.</p>
+<div class="mail"><code>nathanfasil05@gmail.com</code><button class="btn btn-p mag" id="cp" type="button">Copy email</button></div></div>
+<div class="cc"><a class="ct" href="https://wa.me/251975730037?text=Hi%20Nathan%2C%20I%20saw%20your%20portfolio." target="_blank" rel="noopener"><small>WhatsApp</small><b>+251 97 573 0037</b></a><a class="ct " href="https://www.linkedin.com/in/natekiddo" target="_blank" rel="noopener"><small>LinkedIn</small><b>linkedin.com/in/natekiddo</b></a><a class="ct " href="https://github.com/natekiddo" target="_blank" rel="noopener"><small>GitHub</small><b>github.com/natekiddo</b></a><a class="ct " href="https://t.me/natekiddo" target="_blank" rel="noopener"><small>Telegram</small><b>@natekiddo</b></a><a class="ct " href="https://instagram.com/_natekiddo" target="_blank" rel="noopener"><small>Instagram</small><b>@_natekiddo</b></a><a class="ct" href="mailto:nathanfasil05@gmail.com"><small>Email</small><b>nathanfasil05@gmail.com</b></a></div>
+</div></section>
+</main>
+<footer><div class="wrap"><span>© 2026 Nathan Fasil. All rights reserved.</span><span><a href="https://wa.me/251975730037" target="_blank" rel="noopener">WhatsApp</a> · <a href="#top">Back to top ↑</a></span></div></footer>
+
+<script>
+const $=s=>document.querySelector(s),R=matchMedia('(prefers-reduced-motion:reduce)').matches,root=document.documentElement;
+/* theme */
+root.dataset.theme='light';
+const dk=()=>root.dataset.theme==='dark',mode=$('#mode');
+const pt=()=>mode.textContent=dk()?'☀️':'🌙';mode.onclick=()=>{root.dataset.theme=dk()?'light':'dark';pt()};pt();
+/* typing */
+const ph=['Spring Boot APIs','React and TypeScript interfaces','CI/CD pipelines that deploy themselves','Kubernetes releases with no downtime'],tp=$('#tp');let pi=0,ci=0,del=0;
+(function t(){const w=ph[pi];if(R){tp.textContent=w;return}
+ tp.textContent=w.slice(0,ci+=del?-1:1);let d=del?30:60;
+ if(!del&&ci===w.length){del=1;d=1600}else if(del&&!ci){del=0;pi=(pi+1)%ph.length;d=300}setTimeout(t,d)})();
+/* marquee */
+$('#mq').innerHTML=[...'1'.repeat(2)].map(()=>['Java','Spring Boot','React','TypeScript','PostgreSQL','Linux','Docker','Kubernetes','GitHub Actions','GitLab','Jenkins','Prometheus','Grafana'].map(x=>'<span>'+x+'</span>').join('')).join('');
+/* live board */
+const st=$('#st'),T=[['Spring Boot API',0],['PostgreSQL schema',0],['React and TypeScript UI',1],['GitHub Actions deploy',1],['Docker image',2],['Kubernetes rollout',2]].map((x,i)=>({t:x[0],c:x[1],k:'NF-'+(i+1),e:null}));
+T.forEach(o=>{const e=document.createElement('div');e.className='tk';e.innerHTML='<strong>'+o.t+'</strong><div><span>'+o.k+'</span><img src="images/nate-sm.webp" alt="" width="20" height="20"></div>';st.appendChild(e);o.e=e});
+function lay(){const n=[0,0,0];T.forEach(o=>{o.e.style.setProperty('--c',o.c);o.e.style.setProperty('--r',n[o.c]++)})}lay();
+let ti=0;function step(){const o=T[ti++%T.length];o.e.classList.add('mv');o.c=(o.c+1)%3;lay();setTimeout(()=>o.e.classList.remove('mv'),900)}
+if(!R)setInterval(step,1900);
+const bd=$('#bd');if(!R&&matchMedia('(hover:hover)').matches){bd.parentNode.onmousemove=e=>{const r=bd.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;bd.style.transform='rotateY('+x*8+'deg) rotateX('+-y*8+'deg)'};bd.parentNode.onmouseleave=()=>bd.style.transform=''}
+/* tabs */
+const S=[['Code','Software and enterprise apps','Start with software that works.','Java and Spring Boot back ends with REST APIs, JWT security and PostgreSQL, behind React, TypeScript and Tailwind interfaces. Built at Tsehay Bank as an approval workflow.',['Spring Boot, REST, Swagger','React, TypeScript, Vite','Role-based workflows']],
+['Ship','CI/CD pipelines','Push once. Deploy automatically.','GitHub Actions with a self-hosted runner, plus GitLab CE and Jenkins. I fixed the real problems too: runner registration, SSH keys, rsync and host keys.',['GitHub Actions','GitLab CE and Runner','Jenkins']],
+['Run','Linux and containers','Run it on solid ground.','Linux across Ubuntu, RHEL, Rocky, AlmaLinux, Oracle Linux and openSUSE. LVM and RAID storage, firewalls, Apache, NGINX and Tomcat, then Docker, Compose and Kubernetes.',['LVM, RAID, ext4, XFS','Apache, NGINX, Tomcat','Docker and Kubernetes']],
+['Observe','Monitoring','See what the system is doing.','Prometheus and Grafana for metrics, Netdata for system health, and SigNoz with OpenTelemetry for metrics, logs and traces on Kubernetes.',['Prometheus and Grafana','Netdata','SigNoz and OpenTelemetry']]];
+let ai=0,tm;const tb=$('#tabs'),pn=$('#panel'),sec=$('#process');
+tb.innerHTML=S.map((s,i)=>'<button role="tab" data-i="'+i+'"><b>'+s[0]+'</b><span>'+s[1]+'</span></button>').join('');
+function show(i){ai=i;const s=S[i];pn.style.animation='none';pn.offsetHeight;pn.style.animation='';
+ pn.innerHTML='<div><h3>'+s[2]+'</h3><p>'+s[3]+'</p><ul>'+s[4].map(x=>'<li>'+x+'</li>').join('')+'</ul></div><div class="vis" aria-hidden="true">'+s[0]+'</div>';
+ [...tb.children].forEach((b,j)=>{b.setAttribute('aria-selected',j===i);if(j===i){b.style.animation='none';b.offsetHeight;b.style.animation=''}});
+ clearTimeout(tm);if(!R&&!sec.classList.contains('paused'))tm=setTimeout(()=>show((i+1)%4),6000)}
+tb.onclick=e=>{const b=e.target.closest('button');if(b){sec.classList.add('paused');show(+b.dataset.i)}};show(0);
+/* spotlight */
+document.querySelectorAll('.sp').forEach(c=>c.onmousemove=e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')});
+/* magnetic */
+if(!R)document.querySelectorAll('.mag').forEach(b=>{b.onmousemove=e=>{const r=b.getBoundingClientRect();b.style.transform='translate('+(e.clientX-r.left-r.width/2)*.2+'px,'+(e.clientY-r.top-r.height/2)*.3+'px)'};b.onmouseleave=()=>b.style.transform=''});
+/* performance */
+const M={fcp:0,lcp:0,cls:0,load:0},C=[['fcp','First paint',v=>Math.round(v)+' ms',1800,3000],['lcp','Largest paint',v=>Math.round(v)+' ms',2500,4000],['cls','Layout shift',v=>v.toFixed(3),.1,.25],['load','Full load',v=>(v/1000).toFixed(2)+' s',3000,5000]];
+$('#pm').innerHTML=C.map(c=>'<div class="m" id="m-'+c[0]+'"><small>'+c[1]+'</small><b>–</b><div class="bd"><i></i></div><em>Measuring…</em></div>').join('');
+function pp(){C.forEach(c=>{const el=$('#m-'+c[0]),v=M[c[0]];if(!v&&c[0]!=='cls')return;if(c[0]==='cls'&&!M.seen)return;
+ el.querySelector('b').textContent=c[2](v);el.querySelector('i').style.width=Math.max(6,100-Math.min(100,v/c[4]*100))+'%';
+ const g=v<=c[3];el.classList.toggle('bad',!g);el.querySelector('em').textContent=g?'Good':'Needs work'})
+ const r=performance.getEntriesByType('resource').length+1;$('#rq').textContent=r}
+function ob(t,f){try{new PerformanceObserver(l=>{l.getEntries().forEach(f);pp()}).observe({type:t,buffered:true})}catch(e){}}
+ob('paint',e=>{if(e.name==='first-contentful-paint')M.fcp=e.startTime});ob('largest-contentful-paint',e=>M.lcp=e.startTime);
+ob('layout-shift',e=>{M.seen=1;if(!e.hadRecentInput)M.cls+=e.value});
+function ld(){const n=performance.getEntriesByType('navigation')[0];if(n&&n.loadEventEnd){M.load=n.loadEventEnd;M.seen=1;pp()}else setTimeout(ld,200)}
+addEventListener('load',()=>{setTimeout(ld,50)});$('#rm').onclick=()=>{location.reload()};
+/* slider */
+const sl=$('#sl'),w=()=>sl.children[0].offsetWidth+20;
+$('#nx').onclick=()=>sl.scrollBy({left:w(),behavior:'smooth'});$('#pv').onclick=()=>sl.scrollBy({left:-w(),behavior:'smooth'});
+sl.onscroll=()=>$('#ct').textContent=(Math.round(sl.scrollLeft/w())+1)+' / '+sl.children.length;
+/* reveal, counters, timeline */
+function cnt(el){const n=+el.dataset.n,s=el.dataset.s;if(R){el.textContent=n+s;return}let t0;requestAnimationFrame(function f(t){t0=t0||t;const p=Math.min(1,(t-t0)/1600);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+s;if(p<1)requestAnimationFrame(f)})}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');const b=e.target.querySelector('[data-n]');if(b)cnt(b);io.unobserve(e.target)}}),{threshold:.2});
+document.querySelectorAll('.rv,.job').forEach(e=>io.observe(e));
+function sc(){const h=root.scrollHeight-innerHeight;$('#pg').style.transform='scaleX('+(h>0?scrollY/h:0)+')';
+ 
+ let cur='';document.querySelectorAll('main section[id]').forEach(s=>{if(s.getBoundingClientRect().top<innerHeight*.4)cur=s.id});
+ document.querySelectorAll('.links a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur))}
+addEventListener('scroll',sc,{passive:true});sc();
+/* about photo */
+const pfi=$('#pfi');
+if (pfi) {
+  const ex=['png','webp','jpeg'];let ei=0;
+  function fb(){if(ei<ex.length)pfi.src='images/profile.'+ex[ei++];else{pfi.hidden=true;$('.ph0').hidden=false}}
+  pfi.onerror=fb;if(pfi.complete&&!pfi.naturalWidth)fb();
+}
+/* capability feature cards */
+const featureCards=[
+  {badge:'Product',title:'Build digital products',text:'From landing pages to working product flows, I design systems that are clean, fast and easy to trust.',tools:['React','TypeScript','Tailwind','UI systems']},
+  {badge:'Backend',title:'Ship reliable software',text:'I build REST APIs, secure auth flows and application logic that handle real business rules without brittle architecture.',tools:['Spring Boot','JWT','REST','PostgreSQL']},
+  {badge:'Systems',title:'Run the stack end-to-end',text:'I understand the services behind the app: Linux, networking, rollout automation, containers and platform health.',tools:['Linux','Docker','Kubernetes','CI/CD']},
+  {badge:'Delivery',title:'Move from idea to production',text:'I bridge code, deployment and operations so teams can launch faster with less friction and fewer surprises.',tools:['GitHub Actions','Jenkins','Monitoring','Automation']}];
+const featureRoot=$('#feature-grid');
+if(featureRoot){featureRoot.innerHTML=featureCards.map(card=>`<article class="feature-card"><span class="feature-badge">${card.badge}</span><h3>${card.title}</h3><p>${card.text}</p><ul>${card.tools.map(tool=>`<li>${tool}</li>`).join('')}</ul></article>`).join('');}
+/* path */
+const P=[['University','Hope University College','FOUNDATION','Computer Science, Faculty of Informatics','Where the base was built, from first programs to full web apps. Now in 4th year.',['Learned C++, Java, JavaScript, TypeScript and SQL','Built responsive sites and database-connected apps','Moved from HTML and CSS to React and Next.js'],['Programming fundamentals','Databases and SQL','How a front end talks to a back end'],['C++','Java','JavaScript','TypeScript','SQL','React','Tailwind','Next.js']],
+['Tsehay Bank','Software intern','ENTERPRISE SOFTWARE','Digital Banking Deployment Request and Approval System','My first enterprise workflow system: requests move from draft to closed through several review teams.',['Worked on a Draft, Submitted, Review, Approved, Closed workflow','Examined Spring Boot REST APIs with JWT, validation and Spring Security','Worked across the React, TypeScript and Tailwind interface in green and gold','Documented architecture, API flow, roles, status transitions and testing'],['How enterprise apps are structured','Authentication and authorization','How software moves through application, infrastructure and security teams','API gateway concepts with WSO2 API Manager'],['Java','Spring Boot','PostgreSQL','JWT','Swagger','React','TypeScript','Vite','WSO2 (exposure)']],
+['Atlas','System Engineering intern','SYSTEMS AND DEVOPS','From Linux servers to Kubernetes releases','Joined System Engineering when the software team was full, and it became my broadest technical experience.',['Worked on six Linux distributions with LVM, RAID and firewalls','Hosted sites on Apache, NGINX and Tomcat with HTTPS','Automated deploys with GitHub Actions, GitLab CE and Jenkins','Ran Docker, Compose and Minikube with scaling and blue-green releases','Monitored with Prometheus, Grafana, Netdata and SigNoz'],['Infrastructure knowledge makes better software developers','Fixing real runner, SSH, rsync and host-key problems','Troubleshooting stuck Kubernetes pods'],['Linux','NGINX','Docker','Kubernetes','GitHub Actions','Jenkins','Prometheus','SigNoz']],
+['Now','Senior project','WHERE BOTH SIDES MEET','University Private Cloud Platform','A portal where students, teachers and departments request computing resources and administrators approve them.',['Senior Project I: research, requirements, design and documentation','Senior Project II: the build','Free and open-source tools only'],['Joining software development with infrastructure','Writing to a university documentation standard'],['Linux','Docker','Kubernetes','Monitoring','Open source']]];
+$('#rn').innerHTML=P.map((p,i)=>'<button data-i="'+i+'"><span class="dt">'+(i+1)+'</span><b>'+p[0]+'</b><small>'+p[1]+'</small></button>').join('');
+let pathIndex=0, wheelLocked=false;
+function go(i){const p=P[i],rp=$('#rp'),li=a=>a.map(x=>'<li>'+x+'</li>').join('');
+ pathIndex=i;
+ rp.style.animation='none';rp.offsetHeight;rp.style.animation='';
+ rp.innerHTML='<div class="ph1"><span class="key">'+p[2]+'</span><h3>'+p[3]+'</h3><p>'+p[4]+'</p></div><div><h4>What I did</h4><ul>'+li(p[5])+'</ul></div><div><h4>What I learned</h4><ul>'+li(p[6])+'</ul></div><div><h4>Tools</h4><div class="tags">'+p[7].map(x=>'<span>'+x+'</span>').join('')+'</div>'+(i<P.length-1?'<button class="btn btn-o" id="ns" type="button">Next stop: '+P[i+1][0]+' →</button>':'<a class="btn btn-p" href="#contact">Let\'s talk →</a>')+'</div>';
+ [...$('#rn').children].forEach((b,j)=>{b.setAttribute('aria-selected',j===i);b.classList.toggle('dn',j<i)});$('#rf').style.width=(i/(P.length-1))*100+'%';
+ const n=$('#ns');if(n)n.onclick=()=>go(i+1)}
+$('#rn').onclick=e=>{const b=e.target.closest('button');if(b)go(+b.dataset.i)};
+const pathSection=$('#experience');
+pathSection.addEventListener('wheel',e=>{
+  if(wheelLocked) return;
+  const next = e.deltaY > 0 ? 1 : -1;
+  const target = Math.min(P.length-1, Math.max(0, pathIndex + next));
+  if(target === pathIndex) return;
+  if(pathIndex === P.length - 1 && next > 0) return;
+  if(pathIndex === 0 && next < 0) return;
+  wheelLocked = true;
+  go(target);
+  setTimeout(()=>{ wheelLocked = false; }, 500);
+}, { passive: true });
+go(0);
+/* contact */
+$('#cp').onclick=async e=>{try{await navigator.clipboard.writeText('nathanfasil05@gmail.com');e.target.textContent='Copied'}catch{e.target.textContent='Select and copy above'}setTimeout(()=>e.target.textContent='Copy email',2000)};
+$('#mf').onsubmit=e=>{e.preventDefault();location.href='mailto:nathanfasil05@gmail.com?subject='+encodeURIComponent('Project enquiry')+'&body='+encodeURIComponent('Hi Nathan,\n\nI would like to talk about a project.\n\nMy email: '+$('#em').value)};
+</script>
+</body>
+</html>
