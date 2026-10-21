@@ -188,16 +188,28 @@ section{padding:64px 0}}
 .about-image{display:block;width:100%;height:775px;border-radius:0;box-shadow:none;object-fit:cover}
 @media (max-width: 980px){.about-shell{padding:0}.about-image{height:515px}}
 .big{margin-top:28px}.big b{display:block;font-size:clamp(64px,8vw,104px);font-weight:800;letter-spacing:-.05em;line-height:1;background:linear-gradient(135deg,var(--blue),#8270db);-webkit-background-clip:text;background-clip:text;color:transparent}.big span{color:var(--sub)}
-.feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:24px}
-.feature-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 12px 22px rgba(9,30,66,.04);transition:transform .25s,border-color .25s,box-shadow .25s}
-.feature-card:hover{transform:translateY(-4px);border-color:rgba(24,104,219,.35);box-shadow:0 18px 30px rgba(9,30,66,.08)}
-.feature-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--tint);padding:7px 10px;border-radius:999px;border:1px solid rgba(24,104,219,.10)}
-.feature-card h3{font-size:24px;font-weight:800;margin:16px 0 10px;letter-spacing:-.03em}
-.feature-card p{color:var(--sub);font-size:15px;line-height:1.7}
-.feature-card ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding:0}
-.feature-card li{display:inline-flex;align-items:center;padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:var(--bg2);font-size:11px;font-weight:700;color:var(--ink)}
-.feature-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-.feature-meta span{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;background:var(--bg2);border:1px solid var(--line);font-size:12px;font-weight:700;color:var(--sub)}
+.term{--t0:#fff;--t1:#f6f8fa;--t2:#d0d7de;--tx:#1f2328;--tm:#57606a;--tg:#1a7f37;--tb:#0969da;--tp:#eaeef2;background:var(--t0);border:1px solid var(--t2);border-radius:14px;box-shadow:var(--sh);overflow:hidden;color:var(--tx);font:13px/1.65 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+:root[data-theme=dark] .term{--t0:#0d1117;--t1:#161b22;--t2:#30363d;--tx:#e6edf3;--tm:#8b949e;--tg:#56d364;--tb:#79c0ff;--tp:#21262d}
+.tb{display:flex;align-items:center;gap:7px;padding:11px 14px;background:var(--t1);border-bottom:1px solid var(--t2)}
+.tb>i{width:11px;height:11px;border-radius:50%}.tb>i:nth-child(1){background:#ff5f56}.tb>i:nth-child(2){background:#ffbd2e}.tb>i:nth-child(3){background:#27c93f}
+.tabs2{display:flex;gap:4px;margin-left:12px;flex-wrap:wrap}.tabs2 button{background:none;border:0;color:var(--tm);font:600 12px Inter,sans-serif;padding:5px 11px;border-radius:6px;cursor:pointer}
+.tabs2 button:hover{color:var(--tx)}.tabs2 button[aria-selected=true]{background:var(--tp);color:var(--tx)}
+.pipe{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--t2);font:600 12px Inter,sans-serif;color:var(--tm);flex-wrap:wrap}
+.pipe span{padding:3px 11px;border-radius:999px;border:1px solid var(--t2);transition:.4s}.pipe span.on{color:var(--tg);border-color:var(--tg);background:color-mix(in srgb,var(--tg) 14%,transparent)}.pipe span.on:before{content:"✓ "}.pipe i{font-style:normal;opacity:.5}
+.scr{height:330px;overflow:hidden;padding:14px 16px}.scr>div{white-space:pre-wrap;word-break:break-all}.scr .o{color:var(--tm)}.scr .g{color:var(--tg)}.scr .b{color:var(--tb)}.ps{color:var(--tg)}.pd{color:var(--tb)}.scr u{display:inline-block;width:8px;height:15px;background:var(--tx);vertical-align:-3px;text-decoration:none;animation:bl 1s steps(1) infinite}
+.sbar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 16px;background:var(--t1);border-top:1px solid var(--t2);font:600 11px Inter,sans-serif;color:var(--tm)}
+.rpl{background:none;border:1px solid var(--t2);color:var(--tx);border-radius:6px;padding:3px 10px;font:600 11px Inter,sans-serif;cursor:pointer}.rpl:hover{background:var(--tp)}
+.acc{display:flex;gap:14px;height:540px;margin-top:40px}.ac{position:relative;flex:1;min-width:0;border-radius:22px;overflow:hidden;cursor:pointer;color:#fff;background:linear-gradient(135deg,#0c3b8a,#1c2b41);transition:flex .7s cubic-bezier(.16,1,.3,1)}
+.ac.on{flex:3.4}.ac>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5;transition:opacity .5s,transform 1.2s}.ac.on>img{opacity:.85}.ac:hover>img{transform:scale(1.05)}
+.ac>svg{position:absolute;right:24px;top:24px;height:calc(100% - 48px);width:55%;opacity:0;transition:opacity .6s .2s}.ac.on>svg{opacity:1}.ac:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,20,40,.05) 30%,rgba(10,20,40,.9))}
+.nm,.vt,.bd2{position:absolute;z-index:2}.nm{top:22px;left:24px;font-weight:800;font-size:14px;opacity:.85}.vt{left:24px;bottom:24px;writing-mode:vertical-rl;transform:rotate(180deg);font-weight:700;font-size:20px;transition:opacity .3s}.ac.on .vt{opacity:0}
+.bd2{left:28px;right:28px;bottom:28px;opacity:0;transform:translateY(16px);transition:opacity .5s .2s,transform .5s .2s;pointer-events:none;max-width:480px}.ac.on .bd2{opacity:1;transform:none;pointer-events:auto}.bd2 h3{font-size:clamp(24px,2.6vw,34px);font-weight:800;margin:12px 0 8px}.bd2 p{color:#dbe7ff;font-size:15px}
+.feature-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 10px;border-radius:999px}.bd2 .feature-badge{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.bd2 ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;padding:0}.bd2 li{font-size:12px;font-weight:700;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25)}
+.dl{stroke:#fff;stroke-opacity:.5;stroke-width:2;stroke-dasharray:4 4;animation:dash 1s linear infinite}@keyframes dash{to{stroke-dashoffset:-16}}
+@keyframes pop{from{opacity:0;transform:scale(.4)}}
+@media(max-width:900px){.acc{flex-direction:column;height:auto}.ac,.ac.on{flex:none;min-height:360px}.ac>svg{opacity:1;width:50%}.ac .vt{display:none}.ac .bd2{opacity:1;transform:none}.term{font-size:12px}}
+@media(max-width:520px){.term{font-size:11.5px}.scr{height:300px}}
 .rt{position:relative;margin-top:48px}
 .rl{position:absolute;left:12.5%;right:12.5%;top:21px;height:4px;background:var(--line);border-radius:2px}
 .rl i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),#8270db);border-radius:2px;transition:width .9s cubic-bezier(.16,1,.3,1)}
@@ -208,12 +220,13 @@ section{padding:64px 0}}
 .rn button[aria-selected=true] .dt{background:var(--blue);border-color:var(--blue);color:#fff;transform:scale(1.18);box-shadow:0 0 0 8px rgba(24,104,219,.18)}
 .rn b{display:block;color:var(--ink);font-size:17px}.rn small{font-size:13px}
 .rp{margin-top:36px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:40px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:36px;animation:fi .5s both}
+.path-pin{height:400vh;padding:0}.path-sticky{position:sticky;top:64px;height:calc(100vh - 64px);display:flex;align-items:center}.path-sticky>.wrap{width:100%}.path-pin .rt{margin-top:28px}.path-pin .rp{margin-top:24px}
 .ph1{grid-column:1/-1}.ph1 h3{font-size:clamp(26px,3vw,38px);font-weight:800;margin:6px 0}.ph1 p{color:var(--sub);font-size:18px;max-width:760px}
 .rp h4{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--sub);margin-bottom:12px}
 .rp ul{padding:0;list-style:none;display:grid;gap:10px}.rp li{padding-left:22px;position:relative;font-weight:500}
 .rp li:before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:var(--blue)}
 .rp .btn{margin-top:22px}
-@media(max-width:900px){.ab{grid-template-columns:1fr;gap:32px}.pic{max-width:360px}.rp{grid-template-columns:1fr;padding:24px}}
+@media(max-width:900px){.ab{grid-template-columns:1fr;gap:32px}.pic{max-width:360px}.rp{grid-template-columns:1fr;padding:24px}.path-pin{height:auto;padding:64px 0}.path-sticky{position:static;height:auto;display:block}}
 @media(max-width:700px){.rn small{display:none}.rn b{font-size:13px}.facts{grid-template-columns:1fr}}
 </style>
 </head>
@@ -236,9 +249,11 @@ section{padding:64px 0}}
 <div class="row"><input id="em" type="email" placeholder="you@company.com" required><button class="btn btn-p mag" type="submit">Start a conversation</button></div>
 <p class="hint">Opens your email app with a message to me, or message me on <a href="https://wa.me/251975730037" target="_blank" rel="noopener">WhatsApp</a> or <a href="https://t.me/natekiddo" target="_blank" rel="noopener">Telegram</a>.</p></form>
 </div>
-<div class="bw"><div class="board" id="bd">
-<div class="bar"><i></i><i></i><i></i><span>Delivery board · NF</span><em>Live</em></div>
-<div class="stage" id="st"><div class="ch" style="left:0">Intake</div><div class="ch" style="left:33.333%">In progress</div><div class="ch" style="left:66.666%">Shipped</div></div>
+<div class="bw"><div class="term" id="term" aria-label="Terminal replay of my deployment workflow at Atlas">
+<div class="tb"><i></i><i></i><i></i><div class="tabs2" id="ttabs" role="tablist"></div></div>
+<div class="pipe" id="tpipe"></div>
+<div class="scr" id="tscr" aria-hidden="true"></div>
+<div class="sbar"><span id="tsb"></span><button class="rpl" id="trp" type="button">↻ Replay</button></div>
 </div></div>
 </div></section>
 
@@ -249,7 +264,7 @@ section{padding:64px 0}}
 
 <section id="about" class="about-showcase">
   <div class="about-shell">
-    <img class="about-image" src="N8@te.png" alt="Nathan Fasil portfolio cover image" />
+    <img class="about-image" src="images/N8@te.png" alt="Nathan Fasil portfolio cover image" />
   </div>
 </section>
 
@@ -262,11 +277,9 @@ section{padding:64px 0}}
 <div class="sp rv" style="--d:3"><div class="ic">☁️</div><h3>Both, together</h3><p>My senior project joins the two: a private cloud platform for a university, built only with free and open-source tools.</p></div>
 </div></div></section>
 
-<section id="skills"><div class="wrap split">
-<div class="hd"><h2 class="rv">Build what matters</h2>
-<p class="lead rv" style="--d:1">I turn ideas into working products by combining product thinking, software delivery, and systems reliability.</p>
-<div class="big rv" style="--d:2"><b>4</b><span>core delivery layers</span></div></div>
-<div class="feature-grid" id="feature-grid" aria-label="Core capabilities"></div>
+<section id="skills" class="alt"><div class="wrap">
+<div class="sh"><div><h2 class="rv">Build what matters</h2><p class="lead rv" style="--d:1">I turn ideas into working products by combining product thinking, software delivery and systems reliability.</p></div><span class="hintp">Hover or tap a layer →</span></div>
+<div class="acc" id="acc"></div>
 </div></section>
 
 <section id="perf" class="perf"><div class="wrap">
@@ -298,12 +311,12 @@ section{padding:64px 0}}
 <div class="rv" style="--d:3"><b data-n="7" data-s="">0</b><span>projects shown on this page</span></div>
 </div></div></section>
 
-<section id="experience"><div class="wrap">
+<section id="experience" class="path-pin"><div class="path-sticky"><div class="wrap">
 <h2 class="rv">My path</h2>
-<p class="lead rv" style="--d:1">From software to infrastructure, one layer at a time. Click a stop to see what I built and learned there.</p>
-<div class="rt"><div class="rl"><i id="rf"></i></div><div class="rn" id="rn"></div></div>
-<div class="rp" id="rp"></div>
-</div></section>
+<p class="lead rv" style="--d:1">Scroll through each stop, or select one to jump there.</p>
+<div class="rt"><div class="rl"><i id="rf"></i></div><div class="rn" id="rn" role="tablist" aria-label="Career and education timeline"></div></div>
+<div class="rp" id="rp" role="tabpanel" aria-live="polite"></div>
+</div></div></section>
 
 <section class="cta" id="contact"><div class="wrap cg">
 <div><h2 class="rv">The fastest way to ship is to start</h2>
@@ -327,13 +340,15 @@ const ph=['Spring Boot APIs','React and TypeScript interfaces','CI/CD pipelines 
  if(!del&&ci===w.length){del=1;d=1600}else if(del&&!ci){del=0;pi=(pi+1)%ph.length;d=300}setTimeout(t,d)})();
 /* marquee */
 $('#mq').innerHTML=[...'1'.repeat(2)].map(()=>['Java','Spring Boot','React','TypeScript','PostgreSQL','Linux','Docker','Kubernetes','GitHub Actions','GitLab','Jenkins','Prometheus','Grafana'].map(x=>'<span>'+x+'</span>').join('')).join('');
-/* live board */
-const st=$('#st'),T=[['Spring Boot API',0],['PostgreSQL schema',0],['React and TypeScript UI',1],['GitHub Actions deploy',1],['Docker image',2],['Kubernetes rollout',2]].map((x,i)=>({t:x[0],c:x[1],k:'NF-'+(i+1),e:null}));
-T.forEach(o=>{const e=document.createElement('div');e.className='tk';e.innerHTML='<strong>'+o.t+'</strong><div><span>'+o.k+'</span><img src="images/nate-sm.webp" alt="" width="20" height="20"></div>';st.appendChild(e);o.e=e});
-function lay(){const n=[0,0,0];T.forEach(o=>{o.e.style.setProperty('--c',o.c);o.e.style.setProperty('--r',n[o.c]++)})}lay();
-let ti=0;function step(){const o=T[ti++%T.length];o.e.classList.add('mv');o.c=(o.c+1)%3;lay();setTimeout(()=>o.e.classList.remove('mv'),900)}
-if(!R)setInterval(step,1900);
-const bd=$('#bd');if(!R&&matchMedia('(hover:hover)').matches){bd.parentNode.onmousemove=e=>{const r=bd.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;bd.style.transform='rotateY('+x*8+'deg) rotateX('+-y*8+'deg)'};bd.parentNode.onmouseleave=()=>bd.style.transform=''}
+/* terminal replay */
+const TS=[{n:'CI/CD',sb:'Linux server · GitHub Actions self-hosted runner',p:['git push','Actions','Runner','Server','Live'],L:[['c','git push origin feature/developer-homepage-update'],['o','Enumerating objects: 9, done.'],['o','To github.com:natekiddo/cchain.git'],['s',0],['o','Actions: workflow "deploy" queued','b'],['s',1],['o','runner nathan picked up the job · environment: production','b'],['s',2],['c','rsync -a --delete ./ /var/www/website1/'],['s',3],['o','✓ deployed to /var/www/website1','g'],['c','curl -sI http://cchain.com | head -1'],['o','HTTP/1.1 200 OK','g'],['s',4]]},{n:'Kubernetes',sb:'Minikube 1.38.1 · Kubernetes 1.35.1',p:['Pods','Scale','v2.0','Switch','Live'],L:[['c','kubectl -n website get pods'],['o','NAME                          READY   STATUS    AGE'],['o','website-v1-7c9d8f6b5-4kq2x   1/1     Running   3m','g'],['o','website-v1-7c9d8f6b5-m8z6t   1/1     Running   3m','g'],['s',0],['c','kubectl -n website scale deploy/website-v1 --replicas=5'],['o','deployment.apps/website-v1 scaled','g'],['s',1],['c','kubectl -n website apply -f website-v2.yaml'],['o','deployment.apps/website-v2 created','g'],['s',2],['c','kubectl -n website patch svc website -p \'{"spec":{"selector":{"version":"v2"}}}\''],['o','service/website patched','g'],['s',3],['c','curl -s http://website.local'],['o','Version 2.0','g'],['s',4]]},{n:'Docker',sb:'Docker 29.7.2 · Compose v5.4.0',p:['Build','Push','Compose','Test','Up'],L:[['c','docker build -t natekiddo/sample-website:1.0 .'],['o','naming to docker.io/natekiddo/sample-website:1.0 done','g'],['s',0],['c','docker push natekiddo/sample-website:1.0'],['o','The push refers to repository [docker.io/natekiddo/sample-website]'],['o','✓ pushed to Docker Hub','g'],['s',1],['c','docker compose up -d'],['o','✔ Container sample-compose-web-1   Started','g'],['o','✔ Container sample-compose-curl-1  Started','g'],['s',2],['c','docker compose run --rm curl -sI http://web | head -1'],['o','HTTP/1.1 200 OK','g'],['s',3],['c','docker compose ps'],['o','web    Up    0.0.0.0:8084->80/tcp','g'],['s',4]]}];
+const tscr=$('#tscr'),tpipe=$('#tpipe'),ttabs=$('#ttabs'),sleep=ms=>new Promise(r=>setTimeout(r,ms));let tok=0,tauto=1,tcur=0;
+ttabs.innerHTML=TS.map((x,i)=>'<button role="tab" data-i="'+i+'">'+x.n+'</button>').join('');
+const prompt=()=>'<b class="ps">nathan@atlas</b>:<b class="pd">~</b>$ ';
+async function play(i){const my=++tok;tcur=i;const S0=TS[i];[...ttabs.children].forEach((b,j)=>b.setAttribute('aria-selected',j===i));$('#tsb').textContent=S0.sb;tscr.innerHTML='';tpipe.innerHTML=S0.p.map(p=>'<span>'+p+'</span>').join('<i>›</i>');const mark=j=>[...tpipe.querySelectorAll('span')].forEach((e,k)=>e.classList.toggle('on',k<=j));
+ for(const l of S0.L){if(my!==tok)return;if(l[0]==='s'){mark(l[1]);continue}const d=document.createElement('div');if(l[0]==='c'){d.innerHTML=prompt()+'<span></span><u></u>';tscr.appendChild(d);const sp=d.querySelector('span');for(const ch of l[1]){if(my!==tok)return;sp.textContent+=ch;await sleep(R?0:22)}d.querySelector('u').remove();await sleep(R?0:280)}else{d.className='o '+(l[2]||'');d.textContent=l[1];tscr.appendChild(d);await sleep(R?0:170)}tscr.scrollTop=tscr.scrollHeight}
+ const e=document.createElement('div');e.innerHTML=prompt()+'<u></u>';tscr.appendChild(e);tscr.scrollTop=tscr.scrollHeight;if(R||!tauto)return;await sleep(3200);if(my===tok&&tauto)play((i+1)%TS.length)}
+ttabs.onclick=e=>{const b=e.target.closest('button');if(b){tauto=0;play(+b.dataset.i)}};$('#trp').onclick=()=>{tauto=0;play(tcur)};play(0);
 /* tabs */
 const S=[['Code','Software and enterprise apps','Start with software that works.','Java and Spring Boot back ends with REST APIs, JWT security and PostgreSQL, behind React, TypeScript and Tailwind interfaces. Built at Tsehay Bank as an approval workflow.',['Spring Boot, REST, Swagger','React, TypeScript, Vite','Role-based workflows']],
 ['Ship','CI/CD pipelines','Push once. Deploy automatically.','GitHub Actions with a self-hosted runner, plus GitLab CE and Jenkins. I fixed the real problems too: runner registration, SSH keys, rsync and host keys.',['GitHub Actions','GitLab CE and Runner','Jenkins']],
@@ -364,6 +379,8 @@ function ld(){const n=performance.getEntriesByType('navigation')[0];if(n&&n.load
 addEventListener('load',()=>{setTimeout(ld,50)});$('#rm').onclick=()=>{location.reload()};
 /* slider */
 const sl=$('#sl'),w=()=>sl.children[0].offsetWidth+20;
+const projectImages=[['images/digitalbanking.png','Digital Banking Deployment Request and Approval System'],['images/cicd.png','Automated CI/CD deployment pipeline'],['images/B&G.png','Blue-green release on Kubernetes'],['images/university.png','University private cloud platform'],['images/evaluation.png','Student Evaluation System'],['images/bus.png','MoveEt transport platform'],['images/micro.png','Micro Finance System']];
+projectImages.forEach(([src,alt],i)=>{const frame=sl.children[i].querySelector('.im'),image=document.createElement('img');image.src=src;image.alt=alt;image.loading='lazy';frame.replaceChildren(image);frame.classList.add('ph')});
 $('#nx').onclick=()=>sl.scrollBy({left:w(),behavior:'smooth'});$('#pv').onclick=()=>sl.scrollBy({left:-w(),behavior:'smooth'});
 sl.onscroll=()=>$('#ct').textContent=(Math.round(sl.scrollLeft/w())+1)+' / '+sl.children.length;
 /* reveal, counters, timeline */
@@ -382,41 +399,33 @@ if (pfi) {
   function fb(){if(ei<ex.length)pfi.src='images/profile.'+ex[ei++];else{pfi.hidden=true;$('.ph0').hidden=false}}
   pfi.onerror=fb;if(pfi.complete&&!pfi.naturalWidth)fb();
 }
-/* capability feature cards */
-const featureCards=[
-  {badge:'Product',title:'Build digital products',text:'From landing pages to working product flows, I design systems that are clean, fast and easy to trust.',tools:['React','TypeScript','Tailwind','UI systems']},
-  {badge:'Backend',title:'Ship reliable software',text:'I build REST APIs, secure auth flows and application logic that handle real business rules without brittle architecture.',tools:['Spring Boot','JWT','REST','PostgreSQL']},
-  {badge:'Systems',title:'Run the stack end-to-end',text:'I understand the services behind the app: Linux, networking, rollout automation, containers and platform health.',tools:['Linux','Docker','Kubernetes','CI/CD']},
-  {badge:'Delivery',title:'Move from idea to production',text:'I bridge code, deployment and operations so teams can launch faster with less friction and fewer surprises.',tools:['GitHub Actions','Jenkins','Monitoring','Automation']}];
-const featureRoot=$('#feature-grid');
-if(featureRoot){featureRoot.innerHTML=featureCards.map(card=>`<article class="feature-card"><span class="feature-badge">${card.badge}</span><h3>${card.title}</h3><p>${card.text}</p><ul>${card.tools.map(tool=>`<li>${tool}</li>`).join('')}</ul></article>`).join('');}
+/* build what matters */
+function dg(n){const c=['#357de8','#8270db','#2abb7f','#e56910'];return '<svg viewBox="0 0 300 '+(n.length*62+10)+'" preserveAspectRatio="xMidYMid meet" aria-hidden="true">'+n.map((t,i)=>{const y=20+i*62;return(i?'<path class="dl" d="M150 '+(y-22)+'V'+y+'"/>':'')+'<rect x="30" y="'+y+'" width="240" height="40" rx="10" fill="rgba(255,255,255,.1)" stroke="'+c[i%4]+'" stroke-width="1.5"/><circle cx="52" cy="'+(y+20)+'" r="5" fill="'+c[i%4]+'"/><text x="68" y="'+(y+25)+'" fill="#fff" font-size="14" font-weight="600">'+t+'</text>'}).join('')+'</svg>'}
+const art=(a,pos)=>a[0]==='i'?'<img src="'+a[1]+'" alt="'+a[2]+'" loading="lazy">':dg(a[1]).replace('xMidYMid',pos||'xMidYMid');
+const FC=[{badge:'Product',title:'Build digital products',text:'From landing pages to working product flows, I design systems that are clean, fast and easy to trust.',tools:['React','TypeScript','Tailwind','UI systems'],art:['i','images/product.png','Product design and interface']},{badge:'Backend',title:'Ship reliable software',text:'REST APIs, secure auth flows and application logic that handle real business rules without brittle architecture.',tools:['Spring Boot','JWT','REST','PostgreSQL'],art:['i','images/backend.png','Backend service architecture']},{badge:'Systems',title:'Run the stack end to end',text:'I understand the services behind the app: Linux, networking, containers, rollouts and platform health.',tools:['Linux','Docker','Kubernetes','Networking'],art:['i','images/system.webp','Linux and systems infrastructure']},{badge:'Delivery',title:'Move from idea to production',text:'I bridge code, deployment and operations so teams launch faster with fewer surprises.',tools:['GitHub Actions','Jenkins','Monitoring','Automation'],art:['i','images/delivery.png','Software delivery pipeline']}];
+const acc=$('#acc');acc.innerHTML=FC.map((c,i)=>'<article class="ac'+(i?'':' on')+'" tabindex="0" aria-expanded="'+(!i)+'" aria-label="'+c.badge+' capability">'+art(c.art,'xMaxYMid')+'<span class="nm">0'+(i+1)+'</span><span class="vt">'+c.badge+'</span><div class="bd2"><span class="feature-badge">'+c.badge+'</span><h3>'+c.title+'</h3><p>'+c.text+'</p><ul>'+c.tools.map(t=>'<li>'+t+'</li>').join('')+'</ul></div></article>').join('');
+const setActive=a=>[...acc.children].forEach(x=>{const active=x===a;x.classList.toggle('on',active);x.setAttribute('aria-expanded',active)});
+const act=e=>{const a=e.target.closest('.ac');if(a)setActive(a)};
+acc.onmouseover=act;acc.onclick=act;acc.onfocusin=act;acc.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){const a=e.target.closest('.ac');if(a){e.preventDefault();setActive(a)}}};
 /* path */
 const P=[['University','Hope University College','FOUNDATION','Computer Science, Faculty of Informatics','Where the base was built, from first programs to full web apps. Now in 4th year.',['Learned C++, Java, JavaScript, TypeScript and SQL','Built responsive sites and database-connected apps','Moved from HTML and CSS to React and Next.js'],['Programming fundamentals','Databases and SQL','How a front end talks to a back end'],['C++','Java','JavaScript','TypeScript','SQL','React','Tailwind','Next.js']],
 ['Tsehay Bank','Software intern','ENTERPRISE SOFTWARE','Digital Banking Deployment Request and Approval System','My first enterprise workflow system: requests move from draft to closed through several review teams.',['Worked on a Draft, Submitted, Review, Approved, Closed workflow','Examined Spring Boot REST APIs with JWT, validation and Spring Security','Worked across the React, TypeScript and Tailwind interface in green and gold','Documented architecture, API flow, roles, status transitions and testing'],['How enterprise apps are structured','Authentication and authorization','How software moves through application, infrastructure and security teams','API gateway concepts with WSO2 API Manager'],['Java','Spring Boot','PostgreSQL','JWT','Swagger','React','TypeScript','Vite','WSO2 (exposure)']],
 ['Atlas','System Engineering intern','SYSTEMS AND DEVOPS','From Linux servers to Kubernetes releases','Joined System Engineering when the software team was full, and it became my broadest technical experience.',['Worked on six Linux distributions with LVM, RAID and firewalls','Hosted sites on Apache, NGINX and Tomcat with HTTPS','Automated deploys with GitHub Actions, GitLab CE and Jenkins','Ran Docker, Compose and Minikube with scaling and blue-green releases','Monitored with Prometheus, Grafana, Netdata and SigNoz'],['Infrastructure knowledge makes better software developers','Fixing real runner, SSH, rsync and host-key problems','Troubleshooting stuck Kubernetes pods'],['Linux','NGINX','Docker','Kubernetes','GitHub Actions','Jenkins','Prometheus','SigNoz']],
 ['Now','Senior project','WHERE BOTH SIDES MEET','University Private Cloud Platform','A portal where students, teachers and departments request computing resources and administrators approve them.',['Senior Project I: research, requirements, design and documentation','Senior Project II: the build','Free and open-source tools only'],['Joining software development with infrastructure','Writing to a university documentation standard'],['Linux','Docker','Kubernetes','Monitoring','Open source']]];
-$('#rn').innerHTML=P.map((p,i)=>'<button data-i="'+i+'"><span class="dt">'+(i+1)+'</span><b>'+p[0]+'</b><small>'+p[1]+'</small></button>').join('');
-let pathIndex=0, wheelLocked=false;
-function go(i){const p=P[i],rp=$('#rp'),li=a=>a.map(x=>'<li>'+x+'</li>').join('');
+$('#rn').innerHTML=P.map((p,i)=>'<button type="button" role="tab" aria-selected="false" aria-controls="rp" data-i="'+i+'"><span class="dt">'+(i+1)+'</span><b>'+p[0]+'</b><small>'+p[1]+'</small></button>').join('');
+let pathIndex=-1;
+function go(i){if(i<0||i>=P.length||i===pathIndex)return;const p=P[i],rp=$('#rp'),li=a=>a.map(x=>'<li>'+x+'</li>').join('');
  pathIndex=i;
  rp.style.animation='none';rp.offsetHeight;rp.style.animation='';
  rp.innerHTML='<div class="ph1"><span class="key">'+p[2]+'</span><h3>'+p[3]+'</h3><p>'+p[4]+'</p></div><div><h4>What I did</h4><ul>'+li(p[5])+'</ul></div><div><h4>What I learned</h4><ul>'+li(p[6])+'</ul></div><div><h4>Tools</h4><div class="tags">'+p[7].map(x=>'<span>'+x+'</span>').join('')+'</div>'+(i<P.length-1?'<button class="btn btn-o" id="ns" type="button">Next stop: '+P[i+1][0]+' →</button>':'<a class="btn btn-p" href="#contact">Let\'s talk →</a>')+'</div>';
  [...$('#rn').children].forEach((b,j)=>{b.setAttribute('aria-selected',j===i);b.classList.toggle('dn',j<i)});$('#rf').style.width=(i/(P.length-1))*100+'%';
- const n=$('#ns');if(n)n.onclick=()=>go(i+1)}
-$('#rn').onclick=e=>{const b=e.target.closest('button');if(b)go(+b.dataset.i)};
+ const n=$('#ns');if(n)n.onclick=()=>jump(i+1)}
 const pathSection=$('#experience');
-pathSection.addEventListener('wheel',e=>{
-  if(wheelLocked) return;
-  const next = e.deltaY > 0 ? 1 : -1;
-  const target = Math.min(P.length-1, Math.max(0, pathIndex + next));
-  if(target === pathIndex) return;
-  if(pathIndex === P.length - 1 && next > 0) return;
-  if(pathIndex === 0 && next < 0) return;
-  wheelLocked = true;
-  go(target);
-  setTimeout(()=>{ wheelLocked = false; }, 500);
-}, { passive: true });
-go(0);
+const pathPinned=()=>matchMedia('(min-width:901px)').matches,pathRange=()=>Math.max(1,pathSection.offsetHeight-innerHeight+64);
+function jump(i){if(!pathPinned()){go(i);return}scrollTo({top:pathSection.offsetTop-64+((i+.5)/P.length)*pathRange(),behavior:R?'auto':'smooth'})}
+function syncPath(){if(!pathPinned())return;const progress=Math.max(0,Math.min(.999999,(64-pathSection.getBoundingClientRect().top)/pathRange()));go(Math.floor(progress*P.length))}
+$('#rn').onclick=e=>{const b=e.target.closest('button');if(b)jump(+b.dataset.i)};
+addEventListener('scroll',syncPath,{passive:true});addEventListener('resize',syncPath);go(0);syncPath();
 /* contact */
 $('#cp').onclick=async e=>{try{await navigator.clipboard.writeText('nathanfasil05@gmail.com');e.target.textContent='Copied'}catch{e.target.textContent='Select and copy above'}setTimeout(()=>e.target.textContent='Copy email',2000)};
 $('#mf').onsubmit=e=>{e.preventDefault();location.href='mailto:nathanfasil05@gmail.com?subject='+encodeURIComponent('Project enquiry')+'&body='+encodeURIComponent('Hi Nathan,\n\nI would like to talk about a project.\n\nMy email: '+$('#em').value)};
